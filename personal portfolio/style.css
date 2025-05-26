@@ -1,0 +1,138 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary-color: #1e90ff;
+  --bg-color: #f9f9f9;
+  --text-color: #333;
+  --sidebar-bg: #1a1a1a;
+  --sidebar-text: #eee;
+  --card-bg: #fff;
+  --radius: 10px;
+  --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  --transition: 0.3s ease;
+  --font-main: 'Segoe UI', sans-serif;
+}
+
+body {
+  font-family: var(--font-main);
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+/* Main Layout */
+.portfolio-container {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 260px;
+  background-color: var(--sidebar-bg);
+  color: var(--sidebar-text);
+  padding: 40px 20px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+}
+
+.sidebar h1 {
+  font-size: 1.8rem;
+  color: var(--primary-color);
+}
+
+.sidebar p {
+  font-size: 1rem;
+  margin: 5px 0;
+}
+
+.sidebar a {
+  color: #88c8ff;
+  text-decoration: none;
+}
+
+.sidebar a:hover {
+  text-decoration: underline;
+}
+
+/* Content */
+.content {
+  flex: 1;
+  padding: 40px 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.content section {
+  background-color: var(--card-bg);
+  padding: 25px;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  transition: var(--transition);
+}
+
+.content section:hover {
+  transform: translateY(-4px);
+}
+
+.content h2 {
+  font-size: 1.5rem;
+  color: var(--primary-color);
+  margin-bottom: 15px;
+  border-bottom: 2px solid var(--primary-color);
+  padding-bottom: 5px;
+}
+
+.content ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.content ul li {
+  position: relative;
+  padding-left: 20px;
+  margin-bottom: 10px;
+}
+
+.content ul li::before {
+  content: "✔";
+  position: absolute;
+  left: 0;
+  color: var(--primary-color);
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 20px;
+  background-color: var(--sidebar-bg);
+  color: var(--sidebar-text);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .portfolio-container {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: static;
+    padding: 20px;
+  }
+
+  .content {
+    padding: 20px;
+  }
+}
